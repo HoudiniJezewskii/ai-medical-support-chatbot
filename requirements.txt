@@ -1,0 +1,27 @@
+# Python packages
+# Install in Colab with:
+#     !pip install -q -r requirements.txt
+#
+
+# ---------------------------------------------------------------
+# Loading and running the language model (used in src/llm.py)
+# ---------------------------------------------------------------
+
+transformers>=4.50.0
+
+accelerate
+
+bitsandbytes>=0.46.1
+
+huggingface_hub>=0.25,<2.0
+
+# ---------------------------------------------------------------
+# RAG (used in src/rag.py)
+# ---------------------------------------------------------------
+
+requests
+
+# strips menus and scripts from those pages so only the readable text is kept.
+beautifulsoup4
+
+sentence-transformers
