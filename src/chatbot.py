@@ -2,7 +2,7 @@
 
 """
 
-from src.models import generate_text
+from src.llm import generate_text
 from src.prompts import build_messages, text_message
 
 
