@@ -21,9 +21,15 @@ DEFAULT_EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 # ----------------------------------------------------------------------
 
 def load_source_list(path=DEFAULT_SOURCES_PATH):
-    """Read the list of source pages (title, url, tier) from a JSON file."""
+    """Read the list of source pages from a JSON file.
+
+    Sources with "enabled": false are stripped out of the returned list.
+    If a source has no "enabled" field, it is treated as enabled.
+    """
     with open(path, "r", encoding="utf-8") as file:
-        return json.load(file)
+        sources = json.load(file)
+        
+    return [source for source in sources if source.get("enabled", True)]
 
 
 def clean_html_text(html):
